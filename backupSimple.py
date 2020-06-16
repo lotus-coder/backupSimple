@@ -30,10 +30,9 @@ class Backup:
     def copiaTodo(self):
         origen = self.dameArchivos(self.rutaOrigen)
         destino = self.dameArchivos(self.rutaDestino)
-        num=0
         print(self.cuantosNiveles)
         if destino!=origen:
-            for i in origen:
+            for num, i in enumerate(origen):
                 rutaNueva = self.rutaDestino + origen[num][len(self.rutaOrigen):]
                 texto = str(origen[num])
                 if os.path.isfile(i):
@@ -48,11 +47,10 @@ class Backup:
                     print('Esto es Destino: '+rutaNueva)
                     if not os.path.exists(rutaNueva):
                         os.makedirs(rutaNueva)
-                num+=1
 
 
 def main():
-    mimimi = Backup("/una/ruta/absoluta",'/otra/ruta/absoluta')
+    mimimi = Backup("C:\\Users\\lotis\\Desktop\\backup",'C:\\Users\\lotis\\Documents\\pruebaBack')
     mimimi.copiaTodo()
 
     
