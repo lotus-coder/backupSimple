@@ -30,7 +30,6 @@ class Backup:
     def copiaTodo(self):
         origen = self.dameArchivos(self.rutaOrigen)
         destino = self.dameArchivos(self.rutaDestino)
-        print(self.cuantosNiveles)
         if destino!=origen:
             for num, i in enumerate(origen):
                 rutaNueva = self.rutaDestino + origen[num][len(self.rutaOrigen):]
